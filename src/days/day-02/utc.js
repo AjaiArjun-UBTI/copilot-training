@@ -2,6 +2,7 @@
 // Ask Copilot Chat: "Write a one-line function that returns the current UTC timestamp."
 // Paste the answer below, then re-run with a different model in the dropdown and note the difference.
 
-function getUtcTimestamp() {}
+const getUtcTimestamp = () => new Date().toISOString();
 
 module.exports = { getUtcTimestamp };
+

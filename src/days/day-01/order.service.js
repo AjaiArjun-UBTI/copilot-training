@@ -24,16 +24,25 @@ function isValidEmail(email) {
 }
 
 // TODO (Day 1 - Task 1, suggestion 2): return the order total formatted as a currency string, e.g. "$1,234.50".
-function formatCurrency(amount) {}
+function formatCurrency(amount) {
+  return `$${amount.toFixed(2)}`;
+}
 
 // TODO (Day 1 - Task 1, suggestion 3): return the number of items in the order (sum of quantities).
-function countItems(items) {}
+function countItems(items) {
+  return items.reduce((sum, item) => sum + item.quantity, 0);
+}
 
 // TODO (Day 1 - Task 1, suggestion 4): return the most expensive item, or null when the order is empty.
-function getMostExpensiveItem(items) {}
+function getMostExpensiveItem(items) {
+  if (items.length === 0) return null;
+  return items.reduce((max, item) => (item.price * item.quantity > max.price * max.quantity ? item : max), items[0]);
+}
 
 // TODO (Day 1 - Task 1, suggestion 5): return true if the order qualifies for free shipping (total of 500 or more).
-function qualifiesForFreeShipping(total) {}
+function qualifiesForFreeShipping(total) {
+  return total >= 500;
+}
 
 module.exports = {
   calculateTotal,
