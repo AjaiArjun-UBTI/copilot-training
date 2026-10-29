@@ -8,6 +8,12 @@ function createRateLimiter(options) {
   const { max, windowMs, now = Date.now } = options;
   const windows = new Map();
 
+  /**
+   * Rate limit check for a given key within the sliding window.
+   * @param {string} key - Identifier (e.g., IP, user ID) to track requests.
+   * @returns {{allowed: boolean, remaining: number}} Whether request is allowed and requests left.
+   * @example const result = check("192.168.1.1"); if (!result.allowed) { throw new Error("Rate limit exceeded"); }
+   */
   return function check(key) {
     const t = now();
     let w = windows.get(key);

@@ -1,8 +1,11 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
 import UserMenu from "@/components/UserMenu";
 import "./globals.css";
+
+export const cacheComponents = false;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
