@@ -10,6 +10,8 @@
 //
 // Dev builds this. QA writes the tests in parallel FROM THE REQUIREMENTS, not from this code.
 
-function main() {}
+function main() {
+    
+}
 
 main();
